@@ -1,11 +1,10 @@
-FROM golang:1.23
+FROM golang:1.21
 
 COPY . /app
 WORKDIR /app
 
 RUN go mod download
 
-EXPOSE 8080
+RUN go build "cmd/EWallet/main.go"
 
-RUN go run "cmd/tenderservice/main.go"
-
+CMD ["./main"]
