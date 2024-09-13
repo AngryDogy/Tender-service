@@ -8,3 +8,4 @@ RUN go mod download
 EXPOSE 8080
 
 RUN go run "cmd/tenderservice/main.go"
+
