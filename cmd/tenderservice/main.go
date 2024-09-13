@@ -41,7 +41,7 @@ func main() {
 	}
 	tenderServer := server.NewServer(
 		gin.Default(),
-		nil,
+		handlers,
 	)
 
 	tenderServer.Run(os.Getenv("SERVER_ADDRESS"))
