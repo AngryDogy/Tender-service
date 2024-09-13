@@ -5,6 +5,6 @@ WORKDIR /app
 
 RUN go mod download
 
-RUN go build "cmd/EWallet/main.go"
+RUN go build "cmd/tenderservice/main.go"
 
 CMD ["./main"]
