@@ -4,8 +4,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"os"
+	"tenderservice/handler"
 	"tenderservice/logger"
+	"tenderservice/repository"
 	"tenderservice/server"
+	"tenderservice/service"
 )
 
 func main() {
@@ -14,7 +17,7 @@ func main() {
 		logger.ErrorLogger.Fatal("failed to load env vars: ", err)
 	}
 
-	/*postgresRepository := repository.NewPostgresRepository(os.Getenv("POSTGRES_CONN"))
+	postgresRepository := repository.NewPostgresRepository(os.Getenv("POSTGRES_CONN"))
 	err = postgresRepository.Connect()
 	if err != nil {
 		logger.ErrorLogger.Fatal("failed to connect to a database: ", err)
@@ -35,7 +38,7 @@ func main() {
 		handler.NewBidHandler(
 			service.NewBidService(postgresRepository),
 			authService),
-	}*/
+	}
 	tenderServer := server.NewServer(
 		gin.Default(),
 		nil,
