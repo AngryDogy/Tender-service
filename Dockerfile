@@ -9,4 +9,4 @@ RUN go build "cmd/tenderservice/main.go"
 
 EXPOSE 8080
 
-CMD ["./main"]
+ENTRYPOINT ["./main"]
