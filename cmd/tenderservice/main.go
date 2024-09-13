@@ -2,14 +2,17 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+	"os"
+	"tenderservice/logger"
 	"tenderservice/server"
 )
 
 func main() {
-	/*err := godotenv.Load()
+	err := godotenv.Load()
 	if err != nil {
 		logger.ErrorLogger.Fatal("failed to load env vars: ", err)
-	}*/
+	}
 
 	/*postgresRepository := repository.NewPostgresRepository(os.Getenv("POSTGRES_CONN"))
 	err = postgresRepository.Connect()
@@ -38,5 +41,5 @@ func main() {
 		nil,
 	)
 
-	tenderServer.Run("0.0.0.0:8080")
+	tenderServer.Run(os.Getenv("SERVER_ADDRESS"))
 }
