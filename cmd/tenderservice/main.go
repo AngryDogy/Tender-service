@@ -35,7 +35,7 @@ func main() {
 	}*/
 	tenderServer := server.NewServer(
 		gin.Default(),
-		handlers,
+		nil,
 	)
 
 	tenderServer.Run("0.0.0.0:8080")
